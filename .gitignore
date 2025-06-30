@@ -27,9 +27,5 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
-# Ignore backup files
-*.bak
-*.backup
-
 # Ignore log files
 *.log
