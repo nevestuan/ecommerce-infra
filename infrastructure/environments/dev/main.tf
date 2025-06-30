@@ -107,4 +107,17 @@ module "product_service" {
     environment = "dev"
     project     = "ecommerce"
   }
+}
+
+resource "azurerm_application_insights" "product_engine" {
+  name                = "ecommerce-product-engine-dev"
+  location            = var.location
+  resource_group_name = data.azurerm_resource_group.rg.name
+  application_type    = "web"
+  workspace_id        = azurerm_log_analytics_workspace.aks.id
+
+  tags = {
+    environment = "dev"
+    project     = "ecommerce"
+  }
 } 
